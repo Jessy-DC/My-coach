@@ -8,12 +8,12 @@ const handleResponse = async (res: Response) => {
 };
 
 export const getAdvices = async () => {
-  console.log(`Fetching advices from ${process.env.EXPO_PUBLIC_API_URL}/api/Advices`);
-  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/Advices`);
+  console.log(`Fetching advices from ${process.env.EXPO_PUBLIC_API_URL}/api/advices`);
+  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/advices`);
   return handleResponse(res);
 };
 
 export const getExercises = async () => {
-  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/Exercises`);
+  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/exercises`);
   return handleResponse(res);
 };
