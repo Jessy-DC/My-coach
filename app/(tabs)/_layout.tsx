@@ -33,6 +33,33 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="advice"
+        options={{
+          title: 'Conseils',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'bulb' : 'bulb-outline'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="exercises"
+        options={{
+          title: 'Exercices',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'fitness' : 'fitness-outline'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="equipment"
+        options={{
+          title: 'Équipements',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'barbell' : 'barbell-outline'} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

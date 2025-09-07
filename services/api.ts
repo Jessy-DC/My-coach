@@ -14,6 +14,11 @@ export const getAdvices = async () => {
 };
 
 export const getExercises = async () => {
-  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/exercises`);
+  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/exercices`);
+  return handleResponse(res);
+};
+
+export const getEquipments = async () => {
+  const res = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/api/equipments`);
   return handleResponse(res);
 };

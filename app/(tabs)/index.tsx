@@ -1,75 +1,109 @@
-import { StyleSheet } from 'react-native';
-
-import ExerciseListScreen from '@/components/exercices/ExerciceListScreen';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    // <ParallaxScrollView
-    //   headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-    //   headerImage={
-    //     <Image
-    //       source={require('@/assets/images/partial-react-logo.png')}
-    //       style={styles.reactLogo}
-    //     />
-    //   }>
-    //   <ThemedView style={styles.titleContainer}>
-    //     <ThemedText type="title">Welcome!</ThemedText>
-    //     <HelloWave />
-    //   </ThemedView>
-    //   <ThemedView style={styles.stepContainer}>
-    //     <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-    //     <ThemedText>
-    //       Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-    //       Press{' '}
-    //       <ThemedText type="defaultSemiBold">
-    //         {Platform.select({
-    //           ios: 'cmd + d',
-    //           android: 'cmd + m',
-    //           web: 'F12',
-    //         })}
-    //       </ThemedText>{' '}
-    //       to open developer tools.
-    //     </ThemedText>
-    //   </ThemedView>
-    //   <ThemedView style={styles.stepContainer}>
-    //     <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-    //     <ThemedText>
-    //       {`Tap the Explore tab to learn more about what's included in this starter app.`}
-    //     </ThemedText>
-    //   </ThemedView>
-    //   <ThemedView style={styles.stepContainer}>
-    //     <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-    //     <ThemedText>
-    //       {`When you're ready, run `}
-    //       <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-    //       <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-    //       <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-    //       <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-    //     </ThemedText>
-    //   </ThemedView>
-    //   <ThemedText>
-    //     <Link href="./exercices">📋 Voir la liste des exercices</Link>
-    //   </ThemedText>
-    // </ParallaxScrollView>
-    <ExerciseListScreen />
+    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
+      <View style={styles.header}>
+        <Text style={styles.welcomeText}>👋</Text>
+        <Text style={styles.title}>Bienvenue sur My Coach</Text>
+        <Text style={styles.subtitle}>Votre application de coaching personnel</Text>
+      </View>
+      
+      <View style={styles.content}>
+        <View style={styles.card}>
+          <Text style={styles.cardIcon}>💡</Text>
+          <Text style={styles.cardTitle}>Conseils personnalisés</Text>
+          <Text style={styles.cardDescription}>
+            Découvrez nos conseils adaptés à vos objectifs
+          </Text>
+        </View>
+        
+        <View style={styles.card}>
+          <Text style={styles.cardIcon}>🏋️</Text>
+          <Text style={styles.cardTitle}>Exercices variés</Text>
+          <Text style={styles.cardDescription}>
+            Une large gamme d'exercices pour tous les niveaux
+          </Text>
+        </View>
+        
+        <View style={styles.card}>
+          <Text style={styles.cardIcon}>🛠️</Text>
+          <Text style={styles.cardTitle}>Équipements</Text>
+          <Text style={styles.cardDescription}>
+            Sélectionnez vos équipements disponibles
+          </Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    backgroundColor: '#1A1A1A',
   },
-  stepContainer: {
-    gap: 8,
+  scrollContent: {
+    flexGrow: 1,
+    paddingBottom: 40,
+  },
+  header: {
+    alignItems: 'center',
+    paddingTop: 80,
+    paddingHorizontal: 20,
+    paddingBottom: 40,
+  },
+  welcomeText: {
+    fontSize: 48,
+    marginBottom: 16,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  subtitle: {
+    fontSize: 16,
+    color: '#888888',
+    textAlign: 'center',
+  },
+  content: {
+    paddingHorizontal: 20,
+    gap: 20,
+  },
+  card: {
+    backgroundColor: '#2A2A2A',
+    borderRadius: 16,
+    padding: 24,
+    alignItems: 'center',
+    borderLeftWidth: 4,
+    borderLeftColor: '#4FC3F7',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 8,
+  },
+  cardIcon: {
+    fontSize: 32,
+    marginBottom: 12,
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  cardDescription: {
+    fontSize: 14,
+    color: '#CCCCCC',
+    textAlign: 'center',
+    lineHeight: 20,
   },
 });
