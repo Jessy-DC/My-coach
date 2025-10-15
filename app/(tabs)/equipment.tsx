@@ -1,15 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import EquipmentList from '@/components/equipment/EquipmentList';
-import { Equipment } from '@/types';
+import TrainingList from '@/components/training/TrainingList';
 
-export default function EquipmentScreen() {
-  const handleSelectionChange = (selectedEquipments: Equipment[]) => {
-    console.log('Selected equipments:', selectedEquipments);
-  };
-
+export default function TrainingScreen() {
   return (
     <View style={styles.container}>
-      <EquipmentList onSelectionChange={handleSelectionChange} />
+      <TrainingList />
     </View>
   );
 }
